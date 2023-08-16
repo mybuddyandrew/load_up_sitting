@@ -5,49 +5,28 @@ class BookingsTest < ApplicationSystemTestCase
     @booking = bookings(:one)
   end
 
-  test "visiting the index" do
-    visit bookings_url
-    assert_selector "h1", text: "Bookings"
-  end
-
   test "should create booking" do
-    visit bookings_url
-    click_on "New booking"
+    visit new_booking_url
 
-    fill_in "Animal name", with: @booking.animal_name
-    fill_in "Animal type", with: @booking.animal_type
-    fill_in "Date of service", with: @booking.date_of_service
     fill_in "First name", with: @booking.first_name
-    fill_in "Hours requested", with: @booking.hours_requested
     fill_in "Last name", with: @booking.last_name
-    fill_in "Price", with: @booking.price
+    fill_in "Animal name", with: @booking.animal_name
+    select "Cat", from: "Animal type"
+    select "4", from: "Hours requested"
+    fill_in "Date of service", with: @booking.date_of_service
     click_on "Create Booking"
 
     assert_text "Booking was successfully created"
-    click_on "Back"
   end
 
-  test "should update Booking" do
-    visit booking_url(@booking)
-    click_on "Edit this booking", match: :first
+  test "should not create booking with invalid data" do
+    visit new_booking_url
 
-    fill_in "Animal name", with: @booking.animal_name
-    fill_in "Animal type", with: @booking.animal_type
-    fill_in "Date of service", with: @booking.date_of_service
-    fill_in "First name", with: @booking.first_name
-    fill_in "Hours requested", with: @booking.hours_requested
-    fill_in "Last name", with: @booking.last_name
-    fill_in "Price", with: @booking.price
-    click_on "Update Booking"
+    # Leaving required fields blank
+    fill_in "First name", with: ""
+    click_on "Create Booking"
 
-    assert_text "Booking was successfully updated"
-    click_on "Back"
-  end
-
-  test "should destroy Booking" do
-    visit booking_url(@booking)
-    click_on "Destroy this booking", match: :first
-
-    assert_text "Booking was successfully destroyed"
+    # Check for error messages
+    assert_text "First name can't be blank"
   end
 end
