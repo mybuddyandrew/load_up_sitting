@@ -1,4 +1,4 @@
-<%= form_with(model: booking, class: "contents") do |form| %>
+<%= form_with(model: booking, url: booking.new_record? ? admin_bookings_path : admin_booking_path(booking), class: "contents") do |form| %>
   <% if booking.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
