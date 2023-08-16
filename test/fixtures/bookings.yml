@@ -1,19 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  first_name: MyString
-  last_name: MyString
-  animal_name: MyString
-  animal_type: MyString
-  hours_requested: 1
+  first_name: John
+  last_name: Doe
+  animal_name: Ruby
+  animal_type: Dog
+  hours_requested: 2
   date_of_service: 2023-08-16
-  price: 9.99
+  price: 40
 
 two:
-  first_name: MyString
-  last_name: MyString
-  animal_name: MyString
-  animal_type: MyString
-  hours_requested: 1
+  first_name: Sarah
+  last_name: Doe
+  animal_name: Luna
+  animal_type: Cat
+  hours_requested: 6
   date_of_service: 2023-08-16
-  price: 9.99
+  price: 50
