@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LoadUpSitting</title>
+    <title>LoadUp Sitting</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,10 +11,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
+  <%= render "shared/nav_bar" %>
+
   <body>
-    <%= render "shared/nav_bar" %>
-    <main class="container mx-auto mt-12 px-5 flex">
+    <main class="container mx-auto my-12 px-5 flex">
       <%= yield %>
     </main>
   </body>
+
+  <%= render "shared/footer" %>
 </html>
