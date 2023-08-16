@@ -15,9 +15,9 @@ These instructions will get you a copy of the project up and running on your loc
 1. Clone the repository: `git clone https://github.com/mybuddyandrew/load_up_sitting.git`
 2. Navigate to the project directory: `cd load_up_sitting`
 3. Install the required gems: `bundle install`
-4. Set up the database: `rails db:create && rails db:migrate`
+4. Set up: `bin/setup`
 5. Seed the database with sample data: `rails db:seed`
-6. Run the server: `rails server`
+6. Run the server: `bin/dev`
 
 ### Gems and Dependencies
 
