@@ -14,10 +14,12 @@ class BookingTest < ActiveSupport::TestCase
   test "minimum hours for dogs" do
     booking = Booking.new(first_name: 'John', last_name: 'Doe', animal_name: 'Ruby', animal_type: 'Dog', hours_requested: 1, date_of_service: '2023-08-16')
     assert_not booking.save
+    assert_equal ["must be between 2 and 8 hours"], booking.errors[:hours_requested]
   end
 
   test "maximum hours for dogs" do
     booking = Booking.new(first_name: 'John', last_name: 'Doe', animal_name: 'Ruby', animal_type: 'Dog', hours_requested: 9, date_of_service: '2023-08-16')
     assert_not booking.save
+    assert_equal ["must be between 2 and 8 hours"], booking.errors[:hours_requested]
   end
 end
